@@ -3,27 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <title>О себе</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #f0f8ff, #dbeeff);
+            color: #333;
+        }
+
+        nav {
+            background-color: #004080;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                margin: 0;
+                padding: 0;
+            }
+
+                nav ul li {
+                    margin-right: 25px;
+                }
+
+                    nav ul li a {
+                        color: white;
+                        text-decoration: none;
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+
+                        nav ul li a:hover {
+                            text-decoration: underline;
+                        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #004080;
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html"class="active">О себе</a>
-            <a href="hobby.html">Мои увлечения</a>
-            <a href="films.html">Любимые фильмы</a>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">О себе</a></li>
+            <li><a href="hobby.html">Увлечения</a></li>
+            <li><a href="favorite.html">Любимое</a></li>
+        </ul>
+    </nav>
 
-    <main>
+    <div class="container">
         <h1>Привет! Я Худайбергенов Санджарбек</h1>
-        <p>Мне 21 лет, я студент.</p>
-        <p>Это мой первый сайт, здесь я расскажу о себе и своих интересах.</p>
-        <img src="photo.jpg" alt="Моё фото" width="200">
-    </main>
+        <img src="photo.jpg" alt="Моё фото" style="max-width: 100%; width: 250px; border-radius: 10px; display: block; margin: 20px auto;">
+        <p>Мне 21 год, я студент. Это мой первый сайт, и здесь я немного расскажу о себе и своих интересах.</p>
+        <p>Я интересуюсь технологиями, изучаю HTML и делаю первые шаги в веб-разработке.</p>
+    </div>
 
     <footer>
-        <p>© 2025 Все права защищены</p>
+        © 2025 Худайбергенов Санджарбек. Все права защищены.
     </footer>
 
 </body>
