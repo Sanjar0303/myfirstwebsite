@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сайт Санджарбека</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        :root {
+            --bg: #121212;
+            --text: #f1f1f1;
+            --card: #1e1e1e;
+            --accent: #58a6ff;
+            --border: #2c2c2c;
+        }
+
+        body.light {
+            --bg: #f5f5f5;
+            --text: #111;
+            --card: #fff;
+            --accent: #0077cc;
+            --border: #ddd;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: transparent url('https://media.giphy.com/media/QhYkLaDIPplDGk4lVJ/giphy.gif') repeat top center;
+            background-size: cover;
+            opacity: 0.05;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: var(--card);
+            color: var(--text);
+            padding: 30px;
+            border-radius: 16px;
+            margin-top: 60px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2em;
+            color: var(--text);
+        }
+
+        img.profile {
+            width: 150px;
+            border-radius: 50%;
+            margin: 20px 0;
+            border: 3px solid var(--accent);
+        }
+
+        h2 {
+            color: var(--accent);
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+            ul li {
+                margin-bottom: 10px;
+                font-size: 1.1em;
+            }
+
+                ul li i {
+                    margin-right: 10px;
+                    color: gold;
+                }
+
+        .favorites {
+            background-color: var(--border);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border-left: 5px solid var(--accent);
+        }
+
+            .favorites h2 i {
+                color: var(--accent);
+            }
+
+            .favorites a {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: var(--accent);
+                color: #fff;
+                border-radius: 8px;
+                font-weight: bold;
+                transition: background 0.3s;
+            }
+
+                .favorites a:hover {
+                    background-color: #3c81c2;
+                }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body class="dark">
+    <div class="stars"></div>
+
+    <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
+
+    <div class="container">
+        <h1>👋 Привет! Я Санджарбек</h1>
+
+        <section class="about">
+            <img src="profile.jpg" alt="Моё фото" class="profile" />
+            <p>Я студент <strong>КАИ</strong>. Увлекаюсь технологиями, учу <span style="color:var(--accent)">HTML, C++, CSS и JavaScript</span>. Это мой первый сайт, где я рассказываю о себе!</p>
+        </section>
+
+        <section class="interests">
+            <h2><i class="fa-solid fa-star"></i> Мои увлечения</h2>
+            <ul>
+                <li><i class="fa-solid fa-laptop-code"></i> Программирование</li>
+                <li><i class="fa-solid fa-square-root-variable"></i> Математика</li>
+                <li><i class="fa-solid fa-network-wired"></i> IT</li>
+            </ul>
+        </section>
+
+        <section class="favorites">
+            <h2><i class="fa-solid fa-film"></i> Мои любимые фильмы</h2>
+            <p>Перейдите в раздел, чтобы посмотреть список моих любимых фильмов!</p>
+            <a href="films.html"><i class="fa-solid fa-arrow-right"></i> Смотреть фильмы</a>
+        </section>
+
+        <footer>
+            <p>© 2025 Санджарбек. Все права защищены.</p>
+            <p>Обратная связь: <a href="tel:+79196217883" style="color:var(--accent); text-decoration: none;">+7 919 621-78-83</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle("light");
+        }
+    </script>
+</body>
+</html>
