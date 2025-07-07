@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт Санджарбека</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Базовые стили -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        img.profile {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            img.profile {
+                width: 100px;
+            }
+
+            h1, h2 {
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1, h2 {
+                font-size: 22px;
+            }
+
+            p, li {
+                font-size: 16px;
+            }
+
+            img.profile {
+                width: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1, h2 {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            img.profile {
+                width: 100px;
+                display: block;
+                margin: 0 auto 20px;
+            }
+
+            p, li {
+                font-size: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header data-aos="fade-down">
+            <h1><i class="fa-solid fa-user"></i> Привет! Я Санджарбек</h1>
+        </header>
+
+        <section class="about" style="margin-top: 20px;" data-aos="fade-up">
+            <img src="img/profile.jpg" alt="Моё фото" class="profile">
+            <p>Я студент КАИ. Увлекаюсь технологиями, учу HTML, C++, CSS и JavaScript. Это мой первый сайт, где я рассказываю о себе!</p>
+        </section>
+
+        <section class="interests" style="margin-top: 30px;" data-aos="fade-right">
+            <h2><i class="fa-solid fa-star"></i> Мои увлечения</h2>
+            <ul>
+                <li><i class="fa-solid fa-laptop-code"></i> Программирование</li>
+                <li><i class="fa-solid fa-robot"></i> Искусственный интеллект</li>
+                <li><i class="fa-solid fa-gamepad"></i> Видеоигры</li>
+            </ul>
+        </section>
+
+        <footer style="margin-top: 40px; text-align: center;" data-aos="fade-up">
+            <p>© 2025 Санджарбек. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>
