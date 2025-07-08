@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Обо мне</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        :root {
+            --bg: #121212;
+            --text: #f1f1f1;
+            --card: #1e1e1e;
+            --accent: #58a6ff;
+            --border: #2c2c2c;
+        }
+
+        body.light {
+            --bg: #f5f5f5;
+            --text: #111;
+            --card: #fff;
+            --accent: #0077cc;
+            --border: #ddd;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: var(--card);
+            padding: 30px;
+            border-radius: 16px;
+            margin-top: 60px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2em;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: var(--accent);
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            background-color: var(--border);
+            padding: 15px;
+            border-left: 5px solid var(--accent);
+            border-radius: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+            ul li {
+                margin-bottom: 10px;
+                font-size: 1.1em;
+            }
+
+                ul li i {
+                    margin-right: 10px;
+                    color: gold;
+                }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: var(--card);
+            border-right: 2px solid var(--border);
+            padding-top: 60px;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .sidebar a {
+                padding: 15px 20px;
+                text-decoration: none;
+                color: var(--text);
+                font-size: 1.1em;
+            }
+
+                .sidebar a:hover {
+                    background-color: var(--border);
+                }
+
+            .sidebar.open {
+                left: 0;
+            }
+
+            .sidebar a.active {
+                background-color: var(--accent);
+                color: #fff;
+            }
+
+        .burger-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 28px;
+            background: none;
+            border: none;
+            color: var(--accent);
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 999;
+        }
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+            margin-top: 30px;
+        }
+
+            .photo-gallery img {
+                width: 250px;
+                height: 170px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s ease;
+            }
+
+                .photo-gallery img:hover {
+                    transform: scale(1.05);
+                }
+
+        .gallery-caption {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: var(--accent);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <button class="burger-button" onclick="toggleSidebar()">&#9776;</button>
+    <div class="sidebar" id="sidebar">
+        <a href="index.html">Главная</a>
+        <a href="films.html">Мои фильмы</a>
+        <a href="aboutme.html">О себе</a>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
+
+    <div class="container">
+        <h1>Моя история</h1>
+
+        <p>Я родился в 2003 году в удивительном городе Дашогуз. Это город на севере Туркменистана, известный своими историческими памятниками и тёплым гостеприимством. Дашогуз окружён степями и пустынями, но его жители всегда полны энергии и стремления к развитию. Здесь чувствуется дух древнего Востока, сочетающийся с современностью.</p>
+
+        <div class="photo-gallery">
+            <img src="Photo1.jpg" alt="Фото 1">
+            <img src="Photo2.jpg" alt="Фото 2">
+            <img src="Photo3.jpg" alt="Фото 3">
+
+            <img src="Photo4.jpg" alt="Фото 4">
+            <img src="Photo5.jpg" alt="Фото 5">
+            <img src="Photo6.jpg" alt="Фото 6">
+
+            <img src="Photo7.jpg" alt="Фото 7">
+            <img src="Photo8.jpg" alt="Фото 8">
+            <img src="Photo9.jpg" alt="Фото 9">
+        </div>
+
+        <p class="gallery-caption">Лучшие виды города Дашогуз</p>
+
+        <p>С раннего детства я увлекался телефонами, компьютерами и активно занимался спортом. Меня всегда привлекали технологии, и я хотел понять, как всё работает изнутри.</p>
+
+        <p>После окончания школы я пошёл служить Родине. На службе я был моряком и служил на корабле под названием <strong>"Алгыр"</strong>. Это время закалило мой характер и научило работать в команде.</p>
+
+        <p>После окончания службы я поступил в университет <strong>КАИ</strong>, где сейчас учусь на 2 курсе (только что завершил 1 курс). Университет даёт мне фундаментальные знания в сфере IT и вдохновляет двигаться дальше.</p>
+
+        <div class="highlight">
+            <p>Создание этого сайта стало для меня важным шагом — я не просто учу HTML, CSS и JavaScript, а применяю их на практике. Каждый проект помогает мне глубже понимать IT и приближает к мечте стать профессиональным разработчиком.</p>
+
+            <p><em>Верю, что если не бояться трудностей и постоянно учиться, можно достичь любых целей. Пусть этот сайт будет началом чего-то большего!</em></p>
+        </div>
+
+        <h2><i class="fa-solid fa-star"></i> Мои увлечения</h2>
+        <ul>
+            <li><i class="fa-solid fa-laptop-code"></i> Веб-разработка</li>
+            <li><i class="fa-solid fa-network-wired"></i> IT и технологии</li>
+            <li><i class="fa-solid fa-dumbbell"></i> Спорт</li>
+            <li><i class="fa-solid fa-anchor"></i> Морское дело</li>
+        </ul>
+
+        <footer>
+            <p>© 2025 Санджарбек. Все права защищены.</p>
+            <p>Обратная связь: <a href="tel:+79196217883" style="color:var(--accent); text-decoration: none;">+7 919 621-78-83</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function setActiveLink() {
+            const links = document.querySelectorAll('.sidebar a');
+            const currentPage = window.location.pathname.split('/').pop();
+
+            links.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        setActiveLink();
+
+        function toggleTheme() {
+            document.body.classList.toggle("light");
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('sidebar').classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            const sidebar = document.getElementById('sidebar');
+            const button = document.querySelector('.burger-button');
+            if (!sidebar.contains(e.target) && !button.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
